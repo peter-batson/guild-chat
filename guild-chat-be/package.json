@@ -1,0 +1,27 @@
+{
+  "name": "guild-chat",
+  "version": "1.0.0",
+  "description": "Chat application for guild education code test",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peter-batson/guild-chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peter-batson/guild-chat/issues"
+  },
+  "homepage": "https://github.com/peter-batson/guild-chat#readme",
+  "dependencies": {
+    "create-react-app": "^4.0.3",
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {
+    "express-generator": "^4.16.1"
+  }
+}
