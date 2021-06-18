@@ -5,17 +5,26 @@ I imagined this chat application as a support resource to help a tech onboard a 
 
 ## Backend
 cd into `guild-chat-be`
+
 `npm install`
+
 `node server.js`
+
 You should see listening on 8080. Congrats! Your server is ready for a socket connection
+
 `cd ..`
 
 ## Frontend
 cd into `guild-chat-fe`
+
 `npm install`
+
 `npm start`
+
 This will spin up the React app on localhost:3000
+
 Now open two windows on localhost:3000
+
 Type your message, click SEND, and check your other window to see it come through!
 
 ## Bugs/Continued Work
