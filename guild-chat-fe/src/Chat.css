@@ -1,0 +1,39 @@
+.chat__room {
+    display: flex;
+    min-height: 500px;
+    flex-direction: column;
+    
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+.chat__room__header {
+    display: flex;
+    justify-content: center;
+    border-bottom: gray 1px solid;
+    height: 42px;
+}
+
+.chat__input {
+    display: flex;
+    justify-content: center;
+    border-top: 1px gray solid;
+    padding: 15px;
+}
+
+.chat__input__button {
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    font-weight: 800;
+    width: 70px;
+    margin-left: 10px;
+}
+
+.chat__input__textarea {
+    width: 50%;
+}

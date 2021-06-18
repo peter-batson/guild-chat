@@ -1,29 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Socket from './Socket.js'
+import Message from './Message';
+import './Chat.css';
 
 const Chat = () => {
 
-    let messages = [{text: 'test message 1'}, {text: 'test message 2'}]
+    const {sendMessage, messages} = Socket();
+    const [newMessage, setNewMessage] = useState('');
     const messageArray = messages.map((message, i) => {
-        return ( <li
-            className="message"
-        >
-            {message.text}
-        </li> )
+        return ( <Message message={message}/> )
     })
 
-    const [newMessage, setNewMessage] = useState('');
-    const sendMessage = Socket();
 
     const messageInput = (e) => {
         setNewMessage(e.target.value)
     }
 
     const emitNewMessage = () => {
-        console.log('emit msg', newMessage)
         sendMessage(newMessage)
-        messages = [...messages, {text: newMessage}]
-        console.log('messages', messages)
         setNewMessage('');
     }
 
@@ -31,13 +25,14 @@ const Chat = () => {
     return (
         <div>
             <div className="chat__room">
-                <h1>This is a chat application</h1>
+                <h1 className="chat__room__header">Guild Support</h1>
                 <ul>
                     {messageArray}
                 </ul>
             </div>
             <div className="chat__input">
                 <textarea type="text"
+                className="chat__input__textarea"
                 value={newMessage}
                 onChange={messageInput} />
                 <button onClick={emitNewMessage} className="chat__input__button">Send</button>

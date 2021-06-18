@@ -5,7 +5,7 @@ const io = require('socket.io')(server, {
       origin: "*",
     },
   });
-
+const uniqid = require('uniqid')
 const PORT = 8080;
 const CHAT_MESSAGE_EVENT = 'newChatMessage';
 
@@ -19,7 +19,11 @@ io.on('connection', (socket) => {
 
     socket.on(CHAT_MESSAGE_EVENT, (data) => {
         console.log('message received',data)
-        io.emit(CHAT_MESSAGE_EVENT, data);
+        io.emit(CHAT_MESSAGE_EVENT, {
+            text: data.text,
+            id: uniqid(),
+            senderId: data.senderId
+        });
     });
 
     socket.on("disconnect", () => {
